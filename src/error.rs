@@ -267,7 +267,7 @@ impl StdError for Error {
         }
     }
 
-    fn cause(&self) -> Option<&StdError> {
+    fn source(&self) -> Option<&(dyn StdError + 'static)> {
         match *self {
             Error::Encode(ref err) => Some(err),
             Error::Decode(ref err) => Some(err),

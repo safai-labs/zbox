@@ -72,37 +72,37 @@ serde = "1.0.99"
 serde_derive = "1.0.99"
 lazy_static = { version = "1.2.0", optional = true }
 libsqlite3-sys = { version = "0.16.0", optional = true }
-redis = { version = "0.10.0", optional = true }
-http  = { version = "0.1.17", optional = true }
-serde_json = { version = "1.0.39", optional = true }
-reqwest = { version = "0.9.18", default-features = false, features = [ "rustls-tls" ], optional = true }
+redis = { version = "0.12.0", optional = true }
+http  = { version = "0.1.18", optional = true }
+serde_json = { version = "1.0.40", optional = true }
+reqwest = { version = "0.9.20", default-features = false, features = [ "rustls-tls" ], optional = true }
 
 [dependencies.linked-hash-map]
 version = "0.5.2"
 features = ["serde_impl"]
 
 [target.'cfg(target_os = "android")'.dependencies]
-android_logger = "0.7.0"
+android_logger = "0.8.3"
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]
 wasm-bindgen = { version = "0.2.47", features = ["serde-serialize"] }
-js-sys = { version = "0.3.24" }
-web-sys = { version = "0.3.24", features = [ "Crypto", "WorkerGlobalScope", "XmlHttpRequest", "XmlHttpRequestResponseType", "Blob"] }
+js-sys = { version = "0.3.27" }
+web-sys = { version = "0.3.27", features = [ "Crypto", "WorkerGlobalScope", "XmlHttpRequest", "XmlHttpRequestResponseType", "Blob"] }
 
 [dev-dependencies]
 bytes = "0.4.12"
 tempdir = "0.3.7"
-rand = "0.6.5"
-rand_xorshift = "0.1.1"
+rand = "0.7.0"
+rand_xorshift = "0.2.0"
 
 [target.'cfg(not(target_os = "windows"))'.build-dependencies]
-pkg-config = "0.3.14"
+pkg-config = "0.3.15"
 
 [target.'cfg(target_os = "windows")'.build-dependencies]
 libflate = "0.1"
 pkg-config = "0.3.14"
-reqwest = { version = "0.9.18", default-features = false, features = [ "rustls-tls" ] }
+reqwest = { version = "0.9.20", default-features = false, features = [ "rustls-tls" ] }
 tar = "0.4"
-tempfile = "3.0"
+tempfile = "3.1.0"
 zip = "0.5"
 cc = "1"

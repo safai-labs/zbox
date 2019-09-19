@@ -16,7 +16,7 @@ pub use self::refcnt::RefCnt;
 pub use self::time::Time;
 pub use self::version::Version;
 
-use std::sync::{Arc, Once, RwLock, ONCE_INIT};
+use std::sync::{Arc, Once, RwLock};
 
 #[cfg(any(target_os = "android", target_arch = "wasm32"))]
 use log::Level;
@@ -35,7 +35,7 @@ pub fn zbox_version() -> String {
     format!("ZboxFS {}", Version::lib_version())
 }
 
-static INIT: Once = ONCE_INIT;
+static INIT: Once = Once::new();
 
 cfg_if! {
     if #[cfg(target_os = "android")] {

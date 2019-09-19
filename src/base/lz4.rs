@@ -347,7 +347,7 @@ impl ::std::error::Error for LZ4Error {
     }
 
     #[inline]
-    fn cause(&self) -> Option<&::std::error::Error> {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         None
     }
 }
